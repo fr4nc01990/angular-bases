@@ -1,0 +1,42 @@
+<h1>{{name}}</h1>
+<br>
+
+<div>Nombre:</div>
+<div class="date-hero">{{name}}</div>
+<br>
+<div>Edad:</div>
+<div class="date-hero">{{age}}</div>
+<br>
+<div>Metodo</div>
+<div class="date-hero">{{NombreMasEdad()}}</div>
+<br>
+<div>Capitalizado</div>
+<div class="date-hero">{{CapitalizarNombre}}</div>
+<br>
+
+<button 
+
+    *ngIf="this.name !== 'spiderman'"
+    (click)="cambiarNombre()"
+    class="btn btn-primary mx-2">    
+    Cambiar nombre
+
+</button>
+
+
+
+
+<button 
+    *ngIf="this.age !== 25"
+    (click)="cambiarEdad()"
+    class="btn btn-primary">    
+    Cambiar edad
+
+</button>
+
+<button 
+    (click)="reset()"
+    class="btn btn-primary mx-2">    
+    Reset
+
+</button>

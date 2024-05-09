@@ -1,0 +1,35 @@
+<button
+  *ngIf="this.temasRenga.length > 0"
+  (click)="borrarUltimoTrack()"
+  class="btn btn-warning"
+>
+  Borrar último track
+</button>
+
+<br />
+
+<div>
+  <h2 *ngIf="this.trackBorrado; else noSeBorroNada">
+    Track borrado:
+
+    <small style="color: red">
+      {{ trackBorrado }}
+    </small>
+  </h2>
+</div>
+
+<ng-template #noSeBorroNada>
+  <h2>No se ha borrado ningún track</h2>
+</ng-template>
+
+<br />
+
+<h3>Despedazados por mil partes</h3>
+
+<br />
+
+<ul class="mt-2 list-group">
+  <li class="list-group-item" *ngFor="let track of this.temasRenga">
+    {{ track }}
+  </li>
+</ul>

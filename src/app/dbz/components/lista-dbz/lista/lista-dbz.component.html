@@ -3,7 +3,37 @@
         
 <ul class="list-group">
 
-    <li class="list-group-item">Krillin - 500</li>
-    <li class="list-group-item">Goku - 10000</li>
+    <li *ngFor="
+        let item of personajesDBZ; 
+        let i = index;
+        let isFirst = first;
+        let isLast = last;
+        let isEven = even;
+        let isOdd = odd
+        "
+        class="list-group-item"
+        [ngClass] ="{
+          'list-group-item-danger': isLast,
+          'list-group-item-warning': isFirst
+
+          
+
+
+        }">
+        
+        <span>{{i+1}}. </span>
+
+        <span>{{item.name}}</span>
+
+        <span>- power: {{item.power}}</span>
+
+        <span>, Es el primero: {{isFirst}}</span>
+
+        <span>, Es el último: {{isLast}}</span>
+
+        <span>, Es impar: {{isEven}}</span>
+
+
+    </li>
 
 </ul>        

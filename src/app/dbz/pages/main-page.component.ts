@@ -25,9 +25,16 @@ export class MainComponent  {
         name: 'Vegeta',
         power: 7500            
         },
-
+        
 
     ]
+
+    onNewCharacter( character: character ):void {
+
+        console.log('MainPage');
+        console.log(character)
+        
+    }
 
     
 }

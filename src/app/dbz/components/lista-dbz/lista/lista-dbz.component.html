@@ -14,24 +14,27 @@
         class="list-group-item"
         [ngClass] ="{
           'list-group-item-danger': isLast,
-          'list-group-item-warning': isFirst
-
-          
-
+          'list-group-item-warning': isFirst     
 
         }">
-        
-        <span>{{i+1}}. </span>
 
-        <span>{{item.name}}</span>
+        <div>
+          
+          <span>{{i+1}}. </span>
+  
+          <span>{{item.name}}</span>
+  
+          <span>- power: {{item.power}}</span>
+  
+          <span>, Es el primero: {{isFirst}}</span>
+  
+          <span>, Es el último: {{isLast}}</span>
+  
+          <span>, Es impar: {{isEven}}</span>
 
-        <span>- power: {{item.power}}</span>
+        </div>
 
-        <span>, Es el primero: {{isFirst}}</span>
-
-        <span>, Es el último: {{isLast}}</span>
-
-        <span>, Es impar: {{isEven}}</span>
+        <button (click)="onDeleteCharacter(i)" class="btn btn-danger">x</button>
 
 
     </li>

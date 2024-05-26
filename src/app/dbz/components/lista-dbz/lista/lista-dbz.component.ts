@@ -1,5 +1,5 @@
-import { Component, Input, input } from '@angular/core';
-import { character } from '../../../interfaces/dbz.interface';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { CharacterDTO } from '../../../interfaces/dbz.interface';
 
 @Component({
   selector: 'app-lista-dbz',
@@ -9,12 +9,25 @@ import { character } from '../../../interfaces/dbz.interface';
 export class ListaDbzComponent {
 
   @Input()
-  public personajesDBZ: character[] = [
+  public personajesDBZ: CharacterDTO[] = [
 
     {
-     name: 'asd',
-     power: 123         
+     name: '',
+     power: 0         
     }
-
+    
   ]
+
+
+
+  @Output()
+  onDelete: EventEmitter<number>=new EventEmitter();
+
+  onDeleteCharacter (index: number ):void {
+    // TODO: Emitir el ID del personaje
+    this.onDelete.emit(index);
+
+  }
+
+
 }

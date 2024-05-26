@@ -1,5 +1,5 @@
 import { Component, Output } from '@angular/core';
-import { character } from '../../interfaces/dbz.interface';
+import { CharacterDTO } from '../../interfaces/dbz.interface';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -10,10 +10,10 @@ import { EventEmitter } from '@angular/core';
 export class FormularioDbzComponent {
 
   @Output()
-  public onNewCharacter: EventEmitter<character> = new EventEmitter();
+  public onNewCharacterChild: EventEmitter<CharacterDTO> = new EventEmitter();
 
 
-  public addCharacter: character = {
+  public addCharacter: CharacterDTO = {
 
     name: '',
     power: 0
@@ -24,11 +24,14 @@ export class FormularioDbzComponent {
     console.log(this.addCharacter);
     if ( this.addCharacter.name.length === 0 ) return;
 
-    this.onNewCharacter.emit(this.addCharacter);
+    this.onNewCharacterChild.emit(this.addCharacter);
 
+  
+    this.addCharacter = {
+      name: '',
+      power: 0,
+    };
 
-    this.addCharacter.name= '';
-    this.addCharacter.power= 0;
   }
 
   

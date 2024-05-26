@@ -6,7 +6,8 @@
 
     <div class="grid-son-a1">
         
-        <app-lista-dbz [personajesDBZ]="personajesDBZ" ></app-lista-dbz>
+        <app-lista-dbz [personajesDBZ]="dbzService.personajesDBZ" 
+                       (onDelete)="dbzService.onDeleteCharacter($event)"></app-lista-dbz>
         
     </div>
     
@@ -14,7 +15,7 @@
 
     <div class="grid-son-a2">
 
-        <app-formulario-dbz (onNewCharacter)="onNewCharacter($event)"></app-formulario-dbz>
+        <app-formulario-dbz (onNewCharacterChild)="dbzService.onNewCharacter($event)"></app-formulario-dbz>
 
     </div>
 

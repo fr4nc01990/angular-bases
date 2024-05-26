@@ -1,5 +1,5 @@
 
-export interface character {
+export interface CharacterDTO {
     name: String,
     power: Number
 }
